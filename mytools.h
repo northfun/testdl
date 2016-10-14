@@ -24,6 +24,7 @@
 #include    <sys/types.h>
 #include    <sys/wait.h>
 #include    <sys/ptrace.h>
+//#include    <sys/user.h> // for GDB only
 #include    <unistd.h>
 
 typedef unsigned long  DWORD;
@@ -61,4 +62,5 @@ struct my_user_regs {
 DWORD procDLAddr (pid_t pid, const char *, const char*);
 void spliteTo2DWORDs (char *str, char *spl, DWORD res[2]);
 void peekText(pid_t, DWORD, char *, size_t);
+void pokeText(pid_t, DWORD, char *, size_t);
 void printSize();

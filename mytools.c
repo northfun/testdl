@@ -99,6 +99,7 @@ procDLAddr (pid_t pid, const char *pstate, const char *name)
     void
 printSize (  )
 {
+    // 4   8   8   8
     printf("int:%d\nlong int:%d\nusigned long:%d\nlong long:%d\n", sizeof(int), sizeof(long int), 
             sizeof(unsigned long), sizeof(long long));
     return ;
@@ -111,7 +112,24 @@ printSize (  )
  * =====================================================================================
  */
     void
-peekText (  )
+peekText (pid_t pid, DWORD addr, char *to, size_t size)
 {
+    size_t index = 0;
+    while(index < size){
+        ptrace(PTRACE_PEEKTEXT, pid, &addr, &to[index]);
+        ++index;
+    }
     return ;
 }		/* -----  end of function peekText  ----- */
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  pokeText
+ *  Description:  多字节数据块的写入
+ * =====================================================================================
+ */
+    void
+pokeText (pid_t pid, DWORD addr, char *to, size_t size)
+{
+    return ;
+}		/* -----  end of function pokeText  ----- */
