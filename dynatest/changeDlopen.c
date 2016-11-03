@@ -16,7 +16,7 @@
  * =====================================================================================
  */
 
-#include	"mytools.h"
+#include	"/home/fbs/go/src/test/ctest/tools/mytools.h"
 
 pid_t task_pid;
 

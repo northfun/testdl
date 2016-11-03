@@ -16,6 +16,7 @@
  * =====================================================================================
  */
 
+#include	"csapp.h"
 #include    <stdlib.h>
 #include    <stdio.h>
 #include    <stdarg.h>
@@ -28,6 +29,7 @@
 #include    <unistd.h>
 
 typedef unsigned long  DWORD;
+typedef unsigned int WORD;
 
 struct my_user_regs { 
     DWORD r15; 
@@ -64,3 +66,5 @@ void spliteTo2DWORDs (char *str, char *spl, DWORD res[2]);
 void peekText(pid_t, DWORD, char *, size_t);
 void pokeText(pid_t, DWORD, char *, size_t);
 void printSize();
+void echo(int connfd);
+
